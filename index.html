@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Division</title>
+</head>
+<body>
+    <h2>Check Your Division</h2>
+
+    <input type="number" id="percentage" placeholder="Enter your percentage" />
+    <button onclick="checkDivision()">Check</button>
+    
+    <p id="result"></p> 
+
+    <script>
+        function checkDivision() {
+      
+            var per = parseFloat(document.getElementById("percentage").value);
+            var resultText = "";
+
+       
+            if (per >= 80 && per <= 100) {
+                resultText = "You are in merit";
+            } else if (per >= 60 && per < 80) {
+                resultText = "You are in 1st division";
+            } else if (per >= 45 && per < 60) {
+                resultText = "You are in 2nd division";
+            } else if (per >= 33 && per < 45) {
+                resultText = "You are in 3rd division";
+            } else if (per < 33 && per >= 0) {
+                resultText = "You are Fail";
+            } else {
+                resultText = "Please enter a valid percentage between 0 and 100.";
+            }
+    
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</body>
+</html>
